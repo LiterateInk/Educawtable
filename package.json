@@ -1,0 +1,72 @@
+{
+  "name": "educawtable",
+  "version": "0.0.0",
+  "description": "A simple wrapper around EDUMOOV's Educartable internal API.",
+  "repository": "github:LiterateInk/Educawtable",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --dts --minify terser --clean --format cjs,esm --sourcemap",
+    "release": "release-it",
+    "lint": "tsc && eslint .",
+    "tsx": "tsx"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "api",
+    "wrapper",
+    "France",
+    "educartable",
+    "edumoov"
+  ],
+  "author": "Mikkel RINGAUD <mikkel@milescode.dev> (https://github.com/Vexcited)",
+  "contributors": [
+    "Tom THERET (https://github.com/tom-theret)"
+  ],
+  "bugs": {
+    "url": "https://github.com/LiterateInk/Educawtable/issues"
+  },
+  "license": "GPL-3.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}",
+      "tagAnnotation": "Release v${version}",
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "draft": false,
+      "releaseName": "v${version}"
+    },
+    "npm": {
+      "publish": true
+    },
+    "hooks": {
+      "before:init": "pnpm lint",
+      "after:bump": "pnpm build"
+    }
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "^2.1.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "eslint": "^9.2.0",
+    "release-it": "^17.2.1",
+    "terser": "^5.31.0",
+    "tsup": "^8.0.2",
+    "tsx": "^4.10.1",
+    "typescript": "^5.4.5"
+  }
+}
