@@ -12,6 +12,15 @@ A simple wrapper around [EDUMOOV's Educartable](https://www.educartable.com/) in
 Currently in reverse engineering phase.
 The API is not stable and may change at any time.
 
+## Development
+
+```bash
+git clone https://github.com/LiterateInk/Educawtable
+pnpm install # Please, use pnpm as package manager
+```
+
+If you want to run a file inside `examples` from this repository, use `pnpm tsx examples/your-example.ts`.
+
 ## Credits
 
 - Worked in collaboration with [Tom THERET](https://github.com/tom-theret).
