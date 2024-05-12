@@ -21,6 +21,9 @@ pnpm install # Please, use pnpm as package manager
 
 If you want to run a file inside `examples` from this repository, use `pnpm tsx examples/your-example.ts`.
 
+> [!NOTE]
+> Implementation is done on the mobile version of the app, located at <https://mobile.educartable.com/?standalone=1>.
+
 ## Credits
 
 - Worked in collaboration with [Tom THERET](https://github.com/tom-theret).
