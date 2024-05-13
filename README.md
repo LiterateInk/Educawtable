@@ -12,6 +12,46 @@ A simple wrapper around [EDUMOOV's Educartable](https://www.educartable.com/) in
 Currently in reverse engineering phase.
 The API is not stable and may change at any time.
 
+## Todo
+
+- [x] Account
+  - [x] Parent
+  - [x] Teacher
+- [ ] Connexion
+  - [x] with credentials
+  - [x] with credentials + OTP
+  - [ ] With ENT
+- [ ] Features
+  - [x] User Informations
+  - [ ] Lessons
+    - [x] Read
+    - [ ] Check (change state)
+    - [ ] Access to files URLs
+    - [ ] Access to games
+  - [ ] Discussions
+    - [ ] Create
+    - [x] Read
+    - [x] Write messages
+    - [x] Delete messages
+    - [ ] Delete / Archive discussion
+  - [ ] Surveys
+    - [x] Read
+    - [ ] Reply / Complete
+    - [ ] (Remove reply)
+  - [ ] Class News
+    - [x] Read
+    - [x] Like
+      - [x] Add
+      - [x] Delete
+    - [x] Reply
+      - [x] Read
+      - [x] Write
+      - [x] Delete
+    - [ ] Access to files URLs
+  - [x] Pupils (view Familly)
+  - [ ] Transcript
+   
+
 ## Development
 
 ```bash
