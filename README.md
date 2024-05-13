@@ -25,9 +25,8 @@ The API is not stable and may change at any time.
   - [x] User Informations
   - [ ] Lessons
     - [x] Read
-    - [ ] Check (change state)
+    - [x] Check (change state)
     - [ ] Access to files URLs
-    - [ ] Access to games
   - [ ] Discussions
     - [ ] Create
     - [x] Read
