@@ -1,3 +1,5 @@
+import { ApiPagination } from "~/constants/types/pagination";
+
 export interface ApiMessagesRes {
   /** Success status */
   success: boolean;
@@ -148,12 +150,5 @@ export interface ApiMessagesRes {
     comments: Array<any>;
     pupils: Array<number>;
   }>;
-  pagination: {
-    page_count: number;
-    current_page: number;
-    has_next_page: boolean;
-    has_prev_page: boolean;
-    count: number;
-    limit: number;
-  };
+  pagination: ApiPagination;
 }

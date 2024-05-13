@@ -1,3 +1,5 @@
+import { ApiPagination } from "~/constants/types/pagination";
+
 /** Use for classic conversation */
 export interface ApiCommentsReadRes {
   success: boolean;
@@ -36,14 +38,7 @@ export interface ApiCommentsReadRes {
       lng: any;
     }>;
   }>;
-  pagination: {
-    page_count: number;
-    current_page: number;
-    has_next_page: boolean;
-    has_prev_page: boolean;
-    count: number;
-    limit: number;
-  };
+  pagination: ApiPagination;
 }
 
 export interface ApiCommentsWriteRes {
