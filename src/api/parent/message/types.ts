@@ -151,4 +151,9 @@ export interface ApiMessagesRes {
     pupils: Array<number>;
   }>;
   pagination: ApiPagination;
-}
+};
+
+export interface ApiMessagesCheckRes {
+  success: boolean;
+  data: Array<any>;
+};
