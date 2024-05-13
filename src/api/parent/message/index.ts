@@ -1,4 +1,4 @@
-import { EDUCARTABLE_API_EDUCARTABLE } from "~/constants/url";
+import { EDUCARTABLE_API_EDUCARTABLE } from "~/constants/endpoints";
 import type { ApiMessagesRes } from "./types";
 
 export const callApiParentMessages = async (input: {

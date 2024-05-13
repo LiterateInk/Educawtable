@@ -1,4 +1,4 @@
-import { EDUCARTABLE_API_EDUCORE } from "~/constants/url";
+import { EDUCARTABLE_API_EDUCORE } from "~/constants/endpoints";
 import type { ApiCommentsDeleteRes } from "./types";
 
 export const callApiParentDeleteComments = async (input: {

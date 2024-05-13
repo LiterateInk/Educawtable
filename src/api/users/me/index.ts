@@ -1,4 +1,4 @@
-import { EDUCARTABLE_API_EDUCORE } from "~/constants/url";
+import { EDUCARTABLE_API_EDUCORE } from "~/constants/endpoints";
 import type { ApiUsersMe, ECApiUsersMe } from "./types";
 
 export const callApiUsersMe = async (input: {

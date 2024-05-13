@@ -1,4 +1,4 @@
-import { EDUCARTABLE_API_CORE } from "~/constants/url";
+import { EDUCARTABLE_API_CORE } from "~/constants/endpoints";
 import type { ApiParentLikeAddRes } from "./types";
 
 export const callApiParentAddLikes = async (input: {
