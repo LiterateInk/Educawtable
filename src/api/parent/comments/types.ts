@@ -1,5 +1,5 @@
 /** Use for classic conversation */
-export interface ApiCommentsRes {
+export interface ApiCommentsReadRes {
   success: boolean;
   data: Array<{
     id: number;
@@ -44,4 +44,27 @@ export interface ApiCommentsRes {
     count: number;
     limit: number;
   };
+}
+
+export interface ApiCommentsWriteRes {
+  success: boolean;
+  data: {
+    id: number;
+    parent_id: any;
+    user_id: number;
+    body: string;
+    modified: string;
+    subject_model: string;
+    subject_key: string;
+    user: {
+      id: number;
+      name: string;
+      firstname: string;
+    };
+  };
+}
+
+export interface ApiCommentsDeleteRes {
+  success: boolean;
+  data: Array<any>;
 }
