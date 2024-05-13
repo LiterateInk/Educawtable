@@ -1,4 +1,9 @@
-export interface ApiAccountsTokenReq {
+export interface ApiAccountsTokenReqRefresh {
+  refreshToken: string;
+  scope: string
+};
+
+export interface ApiAccountsTokenReqAuth {
   username: string;
   password: string;
   /** Use only if you have MFA enabled. */
