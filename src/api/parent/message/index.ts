@@ -1,4 +1,5 @@
 import { EDUCARTABLE_API_EDUCARTABLE } from "~/constants/url";
+import type { ApiMessagesRes } from "./types";
 
 export const callApiParentMessages = async (input: {
   /** Auth */
@@ -6,13 +7,25 @@ export const callApiParentMessages = async (input: {
   session: string;
   /** Request parameters */
   id: number;
-  type: string;
-  sort: string;
+  type: string[];
+  sort?: string;
   direction: string;
-  start: string;
-  limit: number;
-}): Promise<any> => {
-  const response = await fetch(`${EDUCARTABLE_API_EDUCARTABLE}/parent/${input.id}/messages?type=${input.type}&sort=${input.sort}&direction=${input.direction}&start=${input.start}&limit=${input.limit}`, {
+  start?: string;
+  limit?: number;
+}): Promise<ApiMessagesRes> => {
+  const requests = `${EDUCARTABLE_API_EDUCARTABLE}/parent/${input.id}/messages?type=${input.type.join("%2C")}&direction=${input.direction}`;
+
+  if (input.sort) {
+    requests.concat(`&sort=${input.sort}`);
+  }
+  if (input.start) {
+    requests.concat(`&start=${input.start}`);
+  }
+  if (input.limit) {
+    requests.concat(`&limit=${input.limit}`);
+  }
+
+  const response = await fetch(requests, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -22,9 +35,11 @@ export const callApiParentMessages = async (input: {
     }
   });
 
-  console.log(`${EDUCARTABLE_API_EDUCARTABLE}/parent/${input.id}/messages?type=${input.type}&sort=${input.sort}&direction=${input.direction}&start=${input.start}&limit=${input.limit}`);
+  const json = (await response.json()) as ApiMessagesRes;
 
-  const json = (await response.json()) as any;
-
-  return { data: json.data };
+  return {
+    success: json.success,
+    data: json.data,
+    pagination: json.pagination
+  };
 };
