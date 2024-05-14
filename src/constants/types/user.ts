@@ -1,8 +1,22 @@
 export interface ApiUser {
   id: number
+
+  /**
+   * Last name.
+   * @example "DUPONT"
+   */
   name: string
+
+  /**
+   * @example "Gérard"
+   */
   firstname: string
+
+  /**
+   * @example "someone@domain.com"
+   */
   mail: string
+
   activated: boolean
   disabled: null
   newsletter: boolean
