@@ -16,7 +16,6 @@ The API is not stable and may change at any time.
 
 - [x] Account
   - [x] Parent
-  - [x] Teacher
 - [ ] Connexion
   - [x] with credentials
   - [x] with credentials + OTP
@@ -28,11 +27,13 @@ The API is not stable and may change at any time.
     - [x] Check (change state)
     - [ ] Access to files URLs
   - [ ] Discussions
-    - [ ] Create
+    - [x] Create
     - [x] Read
-    - [x] Write messages
+    - [ ] Write messages
+      - [x] Text
+      - [ ] Add files
     - [x] Delete messages
-    - [ ] Delete / Archive discussion
+    - [x] Delete / Archive discussion
   - [ ] Surveys
     - [x] Read
     - [ ] Reply / Complete
