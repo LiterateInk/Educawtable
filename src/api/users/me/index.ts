@@ -1,11 +1,14 @@
-import { EDUCARTABLE_API_EDUCORE } from "~/constants/endpoints";
-import type { ApiUsersMe, ECApiUsersMe } from "./types";
+import type { ApiUsersMe } from "./types";
+import type { Fetcher } from "~/helpers/types/fetcher";
 
-export const callApiUsersMe = async (input: {
+import { EDUCARTABLE_API_EDUCORE } from "~/constants/endpoints";
+import readSetCookie from "~/helpers/read-set-cookie";
+
+export const callApiUsersMe = async (fetcher: Fetcher, input: {
   token: string;
-}): Promise<ApiUsersMe> => {
+}) => {
   // NOTE: Why `?light=1` ?
-  const response = await fetch(`${EDUCARTABLE_API_EDUCORE}/users/me?light=1`, {
+  const response = await fetcher(`${EDUCARTABLE_API_EDUCORE}/users/me?light=1`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -13,13 +16,12 @@ export const callApiUsersMe = async (input: {
     }
   });
 
-  const cookies = response.headers.get("set-cookie") || "";
-  if (!cookies) {
+  const cookies = readSetCookie(response.headers);
+  if (cookies.length === 0) {
     throw new Error("No cookies found");
   }
 
-  const cookie = cookies.split(";")[0];
-  const json = await response.json() as ECApiUsersMe;
+  const json = await response.json<ApiUsersMe>();
 
-  return { cookies: [cookie], data: json.data };
+  return { cookies, data: json.data };
 };
