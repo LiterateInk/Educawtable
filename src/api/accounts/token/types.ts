@@ -3,25 +3,30 @@ export interface ApiAccountsTokenReqRefresh {
   scope: string
 };
 
+/**
+ * Base authentication request parameters.
+ */
 export interface ApiAccountsTokenReqAuth {
+  /**
+   * Most of the time, this is the email of the user.
+   */
   username: string;
   password: string;
-  /** Use only if you have MFA enabled. */
+
+  /**
+   * A string of 6 digits,
+   * use only if you have MFA enabled.
+   */
   totp?: string;
 };
 
 export interface ApiAccountsTokenResError {
+  /**
+   * Type of the error.
+   */
   error: string;
+  /**
+   * Description of the error.
+   */
   error_description: string;
-};
-
-export interface ApiAccountsTokenRes {
-  access_token: string;
-  expires_in: number;
-  refresh_expires_in: number;
-  refresh_token: string;
-  token_type: string;
-  "not-before-policy": number;
-  session_state: string;
-  scope: string;
 };
