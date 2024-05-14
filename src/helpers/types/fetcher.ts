@@ -23,7 +23,7 @@
  * };
  */
 export type Fetcher = (url: string, options: {
-  method: "GET" | "POST"
+  method: "GET" | "POST" | "DELETE"
   /** Headers that should be appended to the request. */
   headers?: Record<string, string> | Headers
   /** Body of the request of type given in the "Content-Type" header. */
