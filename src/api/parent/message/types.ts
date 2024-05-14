@@ -151,9 +151,24 @@ export interface ApiMessagesRes {
     pupils: Array<number>;
   }>;
   pagination: ApiPagination;
-};
+}
 
 export interface ApiMessagesCheckRes {
   success: boolean;
   data: Array<any>;
+}
+
+export interface ApiMessagesDeleteRes {
+  success: boolean;
+  data: {
+    id?: string;
+    name?: string;
+    message?: string;
+    url?: string;
+    exception?: {
+      class: string;
+      code: number;
+      message: string;
+    };
+  };
 };
