@@ -1,19 +1,20 @@
 import { EDUCARTABLE_API_EDUCARTABLE } from "~/constants/endpoints";
 import type { ApiMessagesRes } from "./types";
 
-export const callApiParentCreateMessages = async (input: {
+export const callApiParentAchieveMessages = async (input: {
   /** Auth */
   token: string;
   session: string;
   /** Request parameters */
-  id: number;
+  user_id: number;
+  message_id: string;
   children: Array<number>;
-  title: string;
+  action: string;
+  model: string;
   body: string;
-  lang: string;
 }): Promise<ApiMessagesRes> => {
   const response = await fetch(
-    `${EDUCARTABLE_API_EDUCARTABLE}/parent/${input.id}/messages`,
+    `${EDUCARTABLE_API_EDUCARTABLE}/parent/${input.user_id}/messages/${input.message_id}/achieve`,
     {
       method: "POST",
       headers: {
@@ -24,9 +25,9 @@ export const callApiParentCreateMessages = async (input: {
       },
       body: JSON.stringify({
         children: input.children,
-        title: input.title,
-        body: input.body,
-        lang: input.lang
+        action: input.action,
+        model: input.model,
+        body: input.body
       })
     }
   );
