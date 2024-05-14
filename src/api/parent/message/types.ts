@@ -171,4 +171,17 @@ export interface ApiMessagesDeleteRes {
       message: string;
     };
   };
-};
+}
+
+export interface ApiMessagesAchieveRes {
+  success: boolean;
+  data: Array<{
+    id: number;
+    action: string;
+    modified: string;
+    homework_message_id: string;
+    subject_key: number;
+    subject_model: string;
+    user_id: number;
+  }>;
+}
