@@ -1,18 +1,15 @@
 import type { ApiUsersMe } from "./types";
-import type { Fetcher } from "~/helpers/types/fetcher";
 
 import { EDUCARTABLE_API_EDUCORE } from "~/constants/endpoints";
 import readSetCookie from "~/helpers/read-set-cookie";
+import Family from "~/models/Family";
 
-export const callApiUsersMe = async (fetcher: Fetcher, input: {
-  token: string;
-}) => {
-  // NOTE: Why `?light=1` ?
-  const response = await fetcher(`${EDUCARTABLE_API_EDUCORE}/users/me?light=1`, {
+export const callApiUsersMe = async (manager: Family) => {
+  const response = await manager.fetcher(`${EDUCARTABLE_API_EDUCORE}/users/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": input.token
+      "Authorization": manager.tokens.accessToken
     }
   });
 
