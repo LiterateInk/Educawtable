@@ -39,7 +39,7 @@ class TokenManager {
     return this.#tokens;
   }
 
-  public async refreshTokens (): Promise<void> {
+  public async refresh (): Promise<void> {
     const tokens = await callApiAccountsToken(this.#fetcher, {
       refreshToken: this.#tokens.refresh_token,
       scope: this.#tokens.scope
