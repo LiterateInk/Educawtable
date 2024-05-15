@@ -1,10 +1,12 @@
 import type { Fetcher } from "~/helpers/types/fetcher";
+import type { ApiTokens } from "~/constants/types/tokens";
 import type {
   ApiAccountsTokenReqAuth,
   ApiAccountsTokenReqRefresh,
   ApiAccountsTokenResError
 } from "./types";
-import type { ApiTokens } from "~/constants/types/tokens";
+
+import { EDUMOOV_ACCOUNTS_REALM } from "~/constants/endpoints";
 
 export const callApiAccountsToken = async (fetcher: Fetcher, input: ApiAccountsTokenReqAuth | ApiAccountsTokenReqRefresh) => {
   let body = "client_id=educlasse&";
@@ -19,7 +21,7 @@ export const callApiAccountsToken = async (fetcher: Fetcher, input: ApiAccountsT
     body += `grant_type=refresh_token&refresh_token=${input.refreshToken}&scope=${input.scope}`;
   }
 
-  const response = await fetcher("https://accounts.edumoov.com/auth/realms/edumoov/protocol/openid-connect/token", {
+  const response = await fetcher(`${EDUMOOV_ACCOUNTS_REALM}/protocol/openid-connect/token`, {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     method: "POST",
     body
