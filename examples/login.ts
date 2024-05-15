@@ -1,14 +1,30 @@
-import { callApiAccountsToken } from "~/api/accounts/token";
-import { callApiUsersMe } from "~/api/users/me";
+import { Family, authenticate, defaultFetcher } from "../src"; // Replace "../src" with "educawtable".
+import { credentials } from "./_credentials";
 
-void async function() {
-  const tokens = await callApiAccountsToken({
-    username: "",
-    password: "",
-    totp: ""
+void async function () {
+  const family = await authenticate({
+    username: credentials.username,
+    password: credentials.password,
+    totp: credentials.totp,
+
+    // You can use a custom fetcher, if you want.
+    fetcher: defaultFetcher
   });
 
-  const { cookies, data: me } = await callApiUsersMe({ token: tokens.access_token });
+  // Do whatever you want with the family instance.
+  const user = await family.getParentUser();
+  console.log(user.id, ":", user.name, user.firstname);
 
-  // Now we use `tokens` and `cookies` to authenticate further requests.
+  // You can manually refresh the tokens, if needed.
+  await family.tokens.refresh();
+
+  // You can also export the tokens to use them later.
+  const tokens = family.tokens.export();
+
+  // And create a new family with the exported tokens.
+  const familyWithExportedTokens = new Family(defaultFetcher, tokens);
+
+  // You can use the new family instance to make authenticated requests, just like earlier.
+  const userWithExportedTokens = await familyWithExportedTokens.getParentUser();
+  console.log(userWithExportedTokens.id, ":", userWithExportedTokens.name, userWithExportedTokens.firstname);
 }();
