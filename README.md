@@ -1,11 +1,16 @@
-# Educawtable - A purrfect API wrapper for Educartable
+<p align="center">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://github.com/LiterateInk/Educawtable/blob/facfbf748d67c0768e0b34be127f38f4a41dc9f5/.github/Educawtable%20Dark.png">
+        <img alt="Educawtable Logo" src="https://github.com/LiterateInk/Educawtable/blob/facfbf748d67c0768e0b34be127f38f4a41dc9f5/.github/Educawtable%20Light.png">
+    </picture>
+</p>
 
-A simple wrapper around [EDUMOOV's Educartable](https://www.educartable.com/) internal API.
+[EDUMOOV's Educartable](https://www.educartable.com/) is an application dedicated to primary school teachers, designed to simplify classroom management. It lets you track and share assessments, textbooks and student progress, as well as communicate with parents. The aim is to make classroom management more fluid and strengthen communication between school and home.
+
+Educawtable is a simple wrapper around [EDUMOOV's Educartable](https://www.educartable.com/) internal API.
 
 > [!NOTE]  
 > This project is not affiliated with EDUMOOV or Educartable in any way.
-
-> Join [LiterateInk's Discord server](https://literate.ink/discord) to talk about Educawtable, get help and be notified about the latest updates !
 
 ## Status
 
@@ -65,6 +70,14 @@ If you want to run a file inside `examples` from this repository, use `pnpm tsx 
 > [!NOTE]
 > Implementation is done on the mobile version of the app, located at <https://mobile.educartable.com/?standalone=1>.
 
+## Get help
+
+Join [LiterateInk's Discord server](https://discord.gg/f5KNCnMWzB) to talk about Pawnote, get help and be notified about the latest updates !
+
 ## Credits
 
 - Worked in collaboration with [Tom THERET](https://github.com/tom-theret).
+
+## License
+
+This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
