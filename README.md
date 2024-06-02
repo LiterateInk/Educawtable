@@ -24,7 +24,7 @@ The API is not stable and may change at any time.
 - [ ] Connexion
   - [x] with credentials
   - [x] with credentials + OTP
-  - [ ] With ENT
+  - [ ] with ENT
 - [ ] Features
   - [x] User Informations
   - [ ] Lessons
@@ -40,10 +40,10 @@ The API is not stable and may change at any time.
       - [ ] Add files
     - [x] Delete messages
     - [x] Delete / Archive discussion
-  - [ ] Surveys
+  - [x] Surveys
     - [x] Read
-    - [ ] Reply / Complete
-    - [ ] (Remove reply)
+    - [x] Answer
+    - [x] Delete answers
   - [ ] Class News
     - [x] Read
     - [x] Like
