@@ -128,7 +128,16 @@ export interface ApiMessagesRes {
       created: string;
     }>;
     meetings: Array<any>;
-    form_answers: Array<any>;
+    form_answers: Array<{
+      id: number;
+      user_id: number;
+      pupil_id: number;
+      foreign_model: string;
+      foreign_key: string;
+      answers: string;
+      created: string;
+      updated: string;
+    }>;
     medias: Array<{
       id: string;
       name: string;
