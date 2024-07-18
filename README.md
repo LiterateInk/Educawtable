@@ -1,8 +1,7 @@
 <p align="center">
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://github.com/LiterateInk/Educawtable/blob/facfbf748d67c0768e0b34be127f38f4a41dc9f5/.github/Educawtable%20Dark.png">
-        <img alt="Educawtable Logo" src="https://github.com/LiterateInk/Educawtable/blob/facfbf748d67c0768e0b34be127f38f4a41dc9f5/.github/Educawtable%20Light.png">
-    </picture>
+  <picture>
+    <img alt="Educawtable Banner" src="https://github.com/LiterateInk/Educawtable/blob/d140217cdee5b43354a167d21f5454626c45a6d3/.github/assets/readme.svg">
+  </picture>
 </p>
 
 [EDUMOOV's Educartable](https://www.educartable.com/) is an application dedicated to primary school teachers, designed to simplify classroom management. It lets you track and share assessments, textbooks and student progress, as well as communicate with parents. The aim is to make classroom management more fluid and strengthen communication between school and home.
